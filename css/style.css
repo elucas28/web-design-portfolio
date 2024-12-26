@@ -1,28 +1,54 @@
+/* Theme Variables */
 :root {
+    /* Light Theme (default) */
     --primary-color: #2563eb;
     --secondary-color: #1e40af;
     --accent-color: #3b82f6;
     --background-color: #ffffff;
+    --surface-color: #f8fafc;
     --text-color: #1f2937;
     --text-light: #6b7280;
     --border-color: #e5e7eb;
+    --card-background: #ffffff;
+    --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --overlay-color: rgba(0, 0, 0, 0.7);
+    --header-background: rgba(255, 255, 255, 0.95);
+
+    /* Spacing and Other Variables */
+    --mobile: 480px;
+    --tablet: 768px;
+    --laptop: 1024px;
+    --desktop: 1200px;
+    --header-height: 70px;
+    --section-padding: clamp(3rem, 8vw, 6rem);
+    --container-padding: clamp(1rem, 5vw, 2rem);
     --spacing-xs: 0.5rem;
     --spacing-sm: 1rem;
     --spacing-md: 2rem;
     --spacing-lg: 4rem;
     --border-radius: 0.5rem;
     --transition: all 0.3s ease;
+}
 
-    /* Breakpoints */
-    --mobile: 480px;
-    --tablet: 768px;
-    --laptop: 1024px;
-    --desktop: 1200px;
+/* Dark Theme */
+[data-theme="dark"] {
+    --primary-color: #60a5fa;
+    --secondary-color: #3b82f6;
+    --accent-color: #93c5fd;
+    --background-color: #111827;
+    --surface-color: #1f2937;
+    --text-color: #f3f4f6;
+    --text-light: #9ca3af;
+    --border-color: #374151;
+    --card-background: #1f2937;
+    --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    --overlay-color: rgba(0, 0, 0, 0.8);
+    --header-background: rgba(17, 24, 39, 0.95);
+}
 
-    /* Dynamic Spacing */
-    --header-height: 70px;
-    --section-padding: clamp(3rem, 8vw, 6rem);
-    --container-padding: clamp(1rem, 5vw, 2rem);
+/* Theme Transition */
+*, *::before, *::after {
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 * {
@@ -55,7 +81,7 @@ body {
     top: 0;
     left: 0;
     right: 0;
-    background-color: rgba(255, 255, 255, 0.95);
+    background-color: var(--header-background);
     backdrop-filter: blur(5px);
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
     z-index: 1000;
@@ -180,10 +206,10 @@ section {
 }
 
 .skill-card {
-    background-color: white;
+    background-color: var(--card-background);
     padding: var(--spacing-md);
     border-radius: var(--border-radius);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: var(--card-shadow);
     transition: var(--transition);
 }
 
@@ -228,7 +254,7 @@ section {
 
 /* Projetos Section */
 .projects {
-    background-color: #f8fafc;
+    background-color: var(--surface-color);
     padding: var(--spacing-lg) 0;
 }
 
@@ -269,8 +295,8 @@ section {
     position: relative;
     border-radius: var(--border-radius);
     overflow: hidden;
-    background: white;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    background: var(--card-background);
+    box-shadow: var(--card-shadow);
     transition: var(--transition);
 }
 
@@ -302,7 +328,7 @@ section {
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0,0,0,0.7);
+    background: var(--overlay-color);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -388,6 +414,55 @@ section {
 
 .modal-body {
     padding: var(--spacing-md);
+}
+
+/* Theme Toggle */
+.theme-toggle {
+    background: none;
+    border: none;
+    padding: 0.5rem;
+    margin-left: 1rem;
+    cursor: pointer;
+    color: var(--text-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    transition: var(--transition);
+}
+
+.theme-toggle:hover {
+    background-color: var(--surface-color);
+}
+
+.theme-toggle svg {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    transition: transform 0.5s ease, opacity 0.3s ease;
+}
+
+.sun-icon {
+    opacity: 0;
+    transform: scale(0.5);
+}
+
+.moon-icon {
+    opacity: 1;
+    transform: scale(1);
+}
+
+[data-theme="dark"] .sun-icon {
+    opacity: 1;
+    transform: scale(1);
+}
+
+[data-theme="dark"] .moon-icon {
+    opacity: 0;
+    transform: scale(0.5);
 }
 
 /* Responsive Design */
@@ -545,7 +620,7 @@ section {
 
 /* Footer */
 .footer {
-    background-color: #f8fafc;
+    background-color: var(--surface-color);
     padding: var(--spacing-md) 0;
     text-align: center;
     color: var(--text-light);

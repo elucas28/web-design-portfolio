@@ -182,6 +182,45 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+    // Theme Switcher
+    const themeToggle = document.querySelector('.theme-toggle');
+    const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+
+    // Função para definir o tema
+    function setTheme(theme) {
+        document.documentElement.setAttribute('data-theme', theme);
+        localStorage.setItem('theme', theme);
+    }
+
+    // Inicializar tema
+    function initTheme() {
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) {
+            setTheme(savedTheme);
+        } else if (prefersDarkScheme.matches) {
+            setTheme('dark');
+        } else {
+            setTheme('light');
+        }
+    }
+
+    // Alternar tema
+    function toggleTheme() {
+        const currentTheme = document.documentElement.getAttribute('data-theme');
+        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+        setTheme(newTheme);
+    }
+
+    // Event Listeners
+    themeToggle.addEventListener('click', toggleTheme);
+    prefersDarkScheme.addEventListener('change', (e) => {
+        const newTheme = e.matches ? 'dark' : 'light';
+        setTheme(newTheme);
+    });
+
+    // Inicializar tema ao carregar a página
+    initTheme();
+
     // Intersection Observer para animações de entrada
     const observerOptions = {
         threshold: 0.1,
