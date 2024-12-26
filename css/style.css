@@ -772,3 +772,109 @@ section {
 [data-theme="dark"] .experience-item {
     border: 1px solid var(--border-color);
 }
+
+/* Newsletter Section */
+.newsletter {
+    background-color: var(--surface-color);
+    padding: var(--section-padding) 0;
+}
+
+.newsletter-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.newsletter-form {
+    margin-top: var(--spacing-lg);
+}
+
+.newsletter-form .form-group {
+    display: flex;
+    gap: var(--spacing-sm);
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.newsletter-form input[type="email"] {
+    flex: 1;
+    padding: 1rem;
+    border: 2px solid var(--border-color);
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+    transition: var(--transition);
+}
+
+.newsletter-form input[type="email"]:focus {
+    border-color: var(--primary-color);
+    outline: none;
+}
+
+.newsletter-form button {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+}
+
+.newsletter-form button svg {
+    transition: transform 0.3s ease;
+}
+
+.newsletter-form button:hover svg {
+    transform: translateX(4px);
+}
+
+.newsletter-privacy {
+    color: var(--text-light);
+    font-size: 0.875rem;
+    margin-top: var(--spacing-sm);
+}
+
+.newsletter-features {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-lg);
+    margin-top: var(--spacing-lg);
+}
+
+.feature-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--text-light);
+}
+
+.feature-item svg {
+    width: 20px;
+    height: 20px;
+    stroke: var(--primary-color);
+}
+
+/* Dark Mode Specific Styles */
+[data-theme="dark"] .newsletter {
+    background-color: var(--surface-color);
+}
+
+[data-theme="dark"] .newsletter-form input[type="email"] {
+    background-color: var(--card-background);
+    color: var(--text-color);
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .newsletter-features {
+        flex-direction: column;
+        align-items: center;
+        gap: var(--spacing-md);
+    }
+
+    .newsletter-form .form-group {
+        flex-direction: column;
+    }
+
+    .newsletter-form button {
+        width: 100%;
+        justify-content: center;
+    }
+}
