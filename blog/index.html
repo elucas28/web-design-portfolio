@@ -87,78 +87,72 @@
             </div>
         </section>
 
-        <section class="search-section">
+        <section class="blog-filters">
             <div class="container">
-                <div class="search-bar">
-                    <input type="text" placeholder="Pesquisar posts..." aria-label="Pesquisar posts">
-                    <button>Buscar</button>
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-filter="all">Todos</button>
+                    <button class="filter-btn" data-filter="ui">UI Design</button>
+                    <button class="filter-btn" data-filter="ux">UX Design</button>
+                    <button class="filter-btn" data-filter="web">Web Dev</button>
                 </div>
             </div>
         </section>
 
         <section class="blog-grid">
             <div class="container">
-                <article class="blog-card">
-                    <div class="blog-image">
-                        <img src="../img/blog/post1.jpg" alt="UI Design Trends 2024">
-                    </div>
-                    <div class="blog-content">
-                        <div class="blog-meta">12 Dez 2023</div>
-                        <h3>Tendências de UI Design para 2024</h3>
-                        <p>Descubra as principais tendências que vão dominar o design de interfaces no próximo ano.</p>
-                        <div class="blog-tags">
-                            <span class="blog-tag">UI Design</span>
-                            <span class="blog-tag">Tendências</span>
+                <!-- Post 1 -->
+                <article class="project-card" data-category="ui">
+                    <div class="project-image">
+                        <img src="../img/blog/post1.jpg" alt="UI Design Trends 2024" loading="lazy">
+                        <div class="project-overlay">
+                            <div class="project-details">
+                                <h3>Tendências de UI Design para 2024</h3>
+                                <p>UI Design • Tendências</p>
+                                <button class="btn-view-project" data-post="1">Ler Mais</button>
+                            </div>
                         </div>
                     </div>
                 </article>
 
-                <article class="blog-card">
-                    <div class="blog-image">
-                        <img src="../img/blog/post2.jpg" alt="UX Research">
-                    </div>
-                    <div class="blog-content">
-                        <div class="blog-meta">5 Dez 2023</div>
-                        <h3>A Importância da Pesquisa UX</h3>
-                        <p>Como a pesquisa de usuários pode transformar completamente seu projeto digital.</p>
-                        <div class="blog-tags">
-                            <span class="blog-tag">UX Design</span>
-                            <span class="blog-tag">Pesquisa</span>
+                <!-- Post 2 -->
+                <article class="project-card" data-category="ux">
+                    <div class="project-image">
+                        <img src="../img/blog/post2.jpg" alt="UX Research" loading="lazy">
+                        <div class="project-overlay">
+                            <div class="project-details">
+                                <h3>A Importância da Pesquisa UX</h3>
+                                <p>UX Design • Pesquisa</p>
+                                <button class="btn-view-project" data-post="2">Ler Mais</button>
+                            </div>
                         </div>
                     </div>
                 </article>
 
-                <article class="blog-card">
-                    <div class="blog-image">
-                        <img src="../img/blog/post3.jpg" alt="Web Development">
-                    </div>
-                    <div class="blog-content">
-                        <div class="blog-meta">28 Nov 2023</div>
-                        <h3>Desenvolvimento Web Moderno</h3>
-                        <p>As melhores práticas e ferramentas para desenvolvimento web em 2024.</p>
-                        <div class="blog-tags">
-                            <span class="blog-tag">Web Dev</span>
-                            <span class="blog-tag">Frontend</span>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="blog-card">
-                    <div class="blog-image">
-                        <img src="../img/blog/post4.jpg" alt="Mobile Design">
-                    </div>
-                    <div class="blog-content">
-                        <div class="blog-meta">20 Nov 2023</div>
-                        <h3>Design Mobile First</h3>
-                        <p>Por que começar pelo mobile é essencial no design responsivo moderno.</p>
-                        <div class="blog-tags">
-                            <span class="blog-tag">Mobile</span>
-                            <span class="blog-tag">Responsivo</span>
+                <!-- Post 3 -->
+                <article class="project-card" data-category="web">
+                    <div class="project-image">
+                        <img src="../img/blog/post3.jpg" alt="Web Development" loading="lazy">
+                        <div class="project-overlay">
+                            <div class="project-details">
+                                <h3>Desenvolvimento Web Moderno</h3>
+                                <p>Web Dev • Frontend</p>
+                                <button class="btn-view-project" data-post="3">Ler Mais</button>
+                            </div>
                         </div>
                     </div>
                 </article>
             </div>
         </section>
+
+        <!-- Modal do Post -->
+        <div class="project-modal" id="projectModal">
+            <div class="modal-content">
+                <button class="modal-close">&times;</button>
+                <div class="modal-body">
+                    <!-- Conteúdo do modal será inserido via JavaScript -->
+                </div>
+            </div>
+        </div>
     </main>
 
     <footer class="footer">

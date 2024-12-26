@@ -132,114 +132,193 @@ function searchPosts(query) {
     renderPosts();
 }
 
-// Função para filtrar os posts por tag
-function filterPosts(tag) {
-    const tags = document.querySelectorAll('.tags-filter .tag');
-    const posts = document.querySelectorAll('.blog-card');
-    
-    tags.forEach(t => t.classList.remove('active'));
-    document.querySelector(`.tags-filter .tag:contains('${tag}')`).classList.add('active');
-    
-    posts.forEach(post => {
-        const postTags = Array.from(post.querySelectorAll('.tags .tag')).map(t => t.textContent);
-        if (tag === 'Todos' || postTags.includes(tag)) {
-            post.style.display = 'block';
-        } else {
-            post.style.display = 'none';
-        }
-    });
-}
-
-// Função para buscar posts
-function searchPosts(query) {
-    const posts = document.querySelectorAll('.blog-card');
-    const searchQuery = query.toLowerCase();
-    
-    posts.forEach(post => {
-        const title = post.querySelector('h2').textContent.toLowerCase();
-        const content = post.querySelector('p').textContent.toLowerCase();
-        const tags = Array.from(post.querySelectorAll('.tags .tag'))
-            .map(tag => tag.textContent.toLowerCase());
-        
-        if (title.includes(searchQuery) || 
-            content.includes(searchQuery) || 
-            tags.some(tag => tag.includes(searchQuery))) {
-            post.style.display = 'block';
-        } else {
-            post.style.display = 'none';
-        }
-    });
-}
-
-// Event Listeners
 document.addEventListener('DOMContentLoaded', () => {
-    // Filtro de tags
-    const tagButtons = document.querySelectorAll('.tags-filter .tag');
-    tagButtons.forEach(button => {
+    // Filtros
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const projectCards = document.querySelectorAll('.project-card');
+
+    filterButtons.forEach(button => {
         button.addEventListener('click', () => {
-            filterPosts(button.textContent);
+            // Remove active class from all buttons
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            // Add active class to clicked button
+            button.classList.add('active');
+
+            const filter = button.getAttribute('data-filter');
+
+            projectCards.forEach(card => {
+                // Adiciona classe para animação
+                card.classList.add('filtering');
+
+                setTimeout(() => {
+                    if (filter === 'all' || card.getAttribute('data-category') === filter) {
+                        card.style.display = 'block';
+                        setTimeout(() => {
+                            card.classList.remove('filtering');
+                            card.classList.add('show');
+                        }, 10);
+                    } else {
+                        card.classList.remove('show');
+                        card.classList.add('filtering');
+                        setTimeout(() => {
+                            card.style.display = 'none';
+                        }, 300);
+                    }
+                }, 10);
+            });
         });
     });
-    
-    // Busca
-    const searchInput = document.querySelector('.search-bar input');
-    const searchButton = document.querySelector('.search-bar button');
-    
+
+    // Modal de Post
+    const modal = document.getElementById('projectModal');
+    const modalBody = modal.querySelector('.modal-body');
+    const modalClose = modal.querySelector('.modal-close');
+
+    // Dados dos posts
+    const postsData = {
+        1: {
+            title: 'Tendências de UI Design para 2024',
+            content: `
+                <img src="../img/blog/post1.jpg" alt="UI Design Trends 2024">
+                <h2>Tendências de UI Design para 2024</h2>
+                <p>O mundo do design de interface está em constante evolução, e 2024 promete trazer mudanças significativas na maneira como criamos e interagimos com interfaces digitais.</p>
+                
+                <h3>Principais Tendências</h3>
+                <ul>
+                    <li>Design Minimalista e Funcional</li>
+                    <li>Microinterações Avançadas</li>
+                    <li>Glassmorphism 2.0</li>
+                    <li>Cores Vibrantes e Contrastantes</li>
+                </ul>
+                
+                <p>Estas tendências refletem uma mudança na maneira como os usuários interagem com produtos digitais, priorizando experiências mais intuitivas e emocionalmente conectadas.</p>
+                
+                <h3>Impacto no Design</h3>
+                <p>A implementação dessas tendências deve ser feita de forma estratégica, sempre considerando as necessidades dos usuários e os objetivos do produto.</p>
+            `
+        },
+        2: {
+            title: 'A Importância da Pesquisa UX',
+            content: `
+                <img src="../img/blog/post2.jpg" alt="UX Research">
+                <h2>A Importância da Pesquisa UX</h2>
+                <p>A pesquisa de experiência do usuário é fundamental para criar produtos digitais que realmente atendam às necessidades dos usuários.</p>
+                
+                <h3>Métodos de Pesquisa</h3>
+                <ul>
+                    <li>Entrevistas com Usuários</li>
+                    <li>Testes de Usabilidade</li>
+                    <li>Análise de Dados</li>
+                    <li>Pesquisas Contextuais</li>
+                </ul>
+                
+                <p>Uma pesquisa UX bem conduzida pode revelar insights valiosos sobre o comportamento e as necessidades dos usuários.</p>
+                
+                <h3>Benefícios</h3>
+                <p>Investir em pesquisa UX pode reduzir custos de desenvolvimento, aumentar a satisfação do usuário e melhorar as taxas de conversão.</p>
+            `
+        },
+        3: {
+            title: 'Desenvolvimento Web Moderno',
+            content: `
+                <img src="../img/blog/post3.jpg" alt="Web Development">
+                <h2>Desenvolvimento Web Moderno</h2>
+                <p>O desenvolvimento web moderno exige uma combinação de habilidades técnicas e compreensão profunda de experiência do usuário.</p>
+                
+                <h3>Tecnologias Essenciais</h3>
+                <ul>
+                    <li>HTML5 Semântico</li>
+                    <li>CSS3 Moderno</li>
+                    <li>JavaScript ES6+</li>
+                    <li>Frameworks Modernos</li>
+                </ul>
+                
+                <p>A escolha das tecnologias certas é crucial para criar aplicações web performáticas e escaláveis.</p>
+                
+                <h3>Melhores Práticas</h3>
+                <p>Seguir as melhores práticas de desenvolvimento garante código mais limpo, manutenível e acessível.</p>
+            `
+        }
+    };
+
+    // Abrir Modal com animação suave
+    document.querySelectorAll('.btn-view-project').forEach(button => {
+        button.addEventListener('click', () => {
+            const postId = button.getAttribute('data-post');
+            const post = postsData[postId];
+
+            if (post) {
+                modalBody.innerHTML = post.content;
+                modal.style.display = 'block';
+                document.body.style.overflow = 'hidden';
+                
+                // Adiciona classe para animação
+                setTimeout(() => {
+                    modal.classList.add('modal-active');
+                }, 10);
+            }
+        });
+    });
+
+    // Fechar Modal com animação
+    const closeModal = () => {
+        modal.classList.remove('modal-active');
+        setTimeout(() => {
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }, 300);
+    };
+
+    modalClose.addEventListener('click', closeModal);
+
+    // Fechar Modal ao clicar fora ou com tecla ESC
+    window.addEventListener('click', (e) => {
+        if (e.target === modal) {
+            closeModal();
+        }
+    });
+
+    window.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+            closeModal();
+        }
+    });
+
+    tagButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            tagButtons.forEach(btn => btn.classList.remove('active'));
+            button.classList.add('active');
+            filterByTag(button.dataset.tag);
+        });
+    });
+
     searchButton.addEventListener('click', () => {
         searchPosts(searchInput.value);
     });
-    
+
     searchInput.addEventListener('keypress', (e) => {
         if (e.key === 'Enter') {
             searchPosts(searchInput.value);
         }
     });
-    
-    // Paginação
-    const pageButtons = document.querySelectorAll('.pagination .pages button');
-    pageButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            pageButtons.forEach(btn => btn.classList.remove('active'));
-            button.classList.add('active');
-            // Aqui você pode adicionar a lógica para carregar os posts da página selecionada
-        });
+
+    pagination.querySelector('.prev').addEventListener('click', () => {
+        if (currentPage > 1) {
+            currentPage--;
+            renderPosts();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
     });
-});
 
-tagButtons.forEach(button => {
-    button.addEventListener('click', () => {
-        tagButtons.forEach(btn => btn.classList.remove('active'));
-        button.classList.add('active');
-        filterByTag(button.dataset.tag);
+    pagination.querySelector('.next').addEventListener('click', () => {
+        const totalPages = Math.ceil(filteredPosts.length / postsPerPage);
+        if (currentPage < totalPages) {
+            currentPage++;
+            renderPosts();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
     });
-});
 
-searchButton.addEventListener('click', () => {
-    searchPosts(searchInput.value);
+    // Inicializar blog
+    renderPosts();
 });
-
-searchInput.addEventListener('keypress', (e) => {
-    if (e.key === 'Enter') {
-        searchPosts(searchInput.value);
-    }
-});
-
-pagination.querySelector('.prev').addEventListener('click', () => {
-    if (currentPage > 1) {
-        currentPage--;
-        renderPosts();
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-});
-
-pagination.querySelector('.next').addEventListener('click', () => {
-    const totalPages = Math.ceil(filteredPosts.length / postsPerPage);
-    if (currentPage < totalPages) {
-        currentPage++;
-        renderPosts();
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-});
-
-// Inicializar blog
-renderPosts();
