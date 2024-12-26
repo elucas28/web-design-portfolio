@@ -1,18 +1,18 @@
 /* Theme Variables */
 :root {
     /* Light Theme (default) */
-    --primary-color: #93c5fd;
-    --secondary-color: #93c5fd;
-    --accent-color: #93c5fd;
-    --background-color: #e8f0f8;
-    --surface-color: #e8f0f8;
-    --text-color: #1f2937;
-    --text-light: #6b7280;
-    --border-color: #d3d3d4;
-    --card-background: #e4e4e4;
-    --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    --overlay-color: rgba(0, 0, 0, 0.7);
-    --header-background: rgba(255, 255, 255, 0.95);
+    --primary-color: #7B9EB3;
+    --secondary-color: #94A7B7;
+    --accent-color: #B4C5CC;
+    --background-color: #F5F7F9;
+    --surface-color: #FFFFFF;
+    --text-color: #2C3E50;
+    --text-light: #5D7A8C;
+    --border-color: #E1E8ED;
+    --card-background: #FFFFFF;
+    --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    --overlay-color: rgba(0, 0, 0, 0.6);
+    --header-background: rgba(255, 255, 255, 0.98);
 
     /* Spacing and Other Variables */
     --mobile: 480px;
@@ -32,18 +32,18 @@
 
 /* Dark Theme */
 [data-theme="dark"] {
-    --primary-color: #60a5fa;
-    --secondary-color: #60a5fa;
-    --accent-color: #93c5fd;
-    --background-color: #253453;
-    --surface-color: #1f2937;
-    --text-color: #6081c4;
-    --text-light: #6081c4;
-    --border-color: #41464e;
-    --card-background: #3b4c64;
-    --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-    --overlay-color: rgba(0, 0, 0, 0.8);
-    --header-background: rgba(17, 24, 39, 0.95);
+    --primary-color: #7B9EB3;
+    --secondary-color: #94A7B7;
+    --accent-color: #B4C5CC;
+    --background-color: #1A2634;
+    --surface-color: #243447;
+    --text-color: #B4C5CC;
+    --text-light: #94A7B7;
+    --border-color: #2C3E50;
+    --card-background: #243447;
+    --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    --overlay-color: rgba(0, 0, 0, 0.75);
+    --header-background: rgba(26, 38, 52, 0.98);
 }
 
 /* Theme Transition */
@@ -62,10 +62,18 @@ html {
 }
 
 body {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Plus Jakarta Sans', sans-serif;
     line-height: 1.6;
     color: var(--text-color);
     background-color: var(--background-color);
+    font-weight: 300;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 500;
+    line-height: 1.3;
+    color: var(--text-color);
 }
 
 .container {
@@ -82,8 +90,8 @@ body {
     left: 0;
     right: 0;
     background-color: var(--header-background);
-    backdrop-filter: blur(5px);
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(8px);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
     z-index: 1000;
 }
 
@@ -91,13 +99,15 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 70px;
+    height: var(--header-height);
 }
 
 .logo {
+    font-family: 'Playfair Display', serif;
     font-size: 1.5rem;
-    font-weight: 700;
+    font-weight: 600;
     color: var(--primary-color);
+    letter-spacing: -0.02em;
 }
 
 .nav-links {
@@ -109,45 +119,45 @@ body {
 .nav-links a {
     text-decoration: none;
     color: var(--text-color);
-    font-weight: 500;
+    font-weight: 400;
     transition: var(--transition);
+    font-size: 0.95rem;
+    letter-spacing: 0.01em;
 }
 
 .nav-links a:hover {
     color: var(--primary-color);
 }
 
-.mobile-menu {
-    display: none;
-}
-
 /* Hero Section */
 .hero {
-    min-height: calc(100vh - var(--header-height));
-    padding: var(--section-padding) 0;
     min-height: 100vh;
     display: flex;
     align-items: center;
     text-align: center;
-    background: linear-gradient(135deg, #ffffff 0%, #ffffff 100%);
+    background: var(--surface-color);
+    padding: var(--section-padding) 0;
 }
 
 .hero-title {
-    font-size: clamp(2rem, 5vw, 3.5rem);
-    font-weight: 700;
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 600;
     margin-bottom: var(--spacing-sm);
     line-height: 1.2;
-    color: var(--secondary-color); /* Cor mais escura para garantir contraste */
+    letter-spacing: -0.03em;
 }
 
 .highlight {
     color: var(--primary-color);
+    font-style: italic;
 }
 
 .hero-subtitle {
     font-size: 1.25rem;
     color: var(--text-light);
     margin-bottom: var(--spacing-md);
+    font-weight: 300;
+    letter-spacing: 0.01em;
 }
 
 /* Buttons */
