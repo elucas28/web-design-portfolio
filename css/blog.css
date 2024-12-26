@@ -18,6 +18,11 @@
     opacity: 0.9;
 }
 
+/* Dark Theme Overrides */
+[data-theme="dark"] .blog-hero {
+    background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+}
+
 /* Search and Filters */
 .blog-filters {
     padding: var(--spacing-md) 0;
@@ -41,6 +46,16 @@
     border-radius: var(--border-radius);
     background: var(--card-background);
     color: var(--text-color);
+}
+
+[data-theme="dark"] .search-bar input {
+    background: var(--surface-color);
+    border-color: var(--border-color);
+    color: var(--text-color);
+}
+
+[data-theme="dark"] .search-bar input::placeholder {
+    color: var(--text-light);
 }
 
 .search-bar button {
@@ -74,7 +89,20 @@
     transition: var(--transition);
 }
 
+[data-theme="dark"] .tag {
+    background: var(--surface-color);
+    border-color: var(--border-color);
+    color: var(--text-color);
+}
+
 .tag:hover, .tag.active {
+    background: var(--primary-color);
+    border-color: var(--primary-color);
+    color: white;
+}
+
+[data-theme="dark"] .tag:hover,
+[data-theme="dark"] .tag.active {
     background: var(--primary-color);
     border-color: var(--primary-color);
     color: white;
@@ -96,9 +124,18 @@
     transition: var(--transition);
 }
 
+[data-theme="dark"] .blog-card {
+    background: var(--card-background);
+    box-shadow: var(--card-shadow);
+}
+
 .blog-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+}
+
+[data-theme="dark"] .blog-card:hover {
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.4);
 }
 
 .blog-card img {
@@ -125,10 +162,18 @@
     color: var(--text-color);
 }
 
+[data-theme="dark"] .blog-card h2 {
+    color: var(--text-color);
+}
+
 .blog-card p {
     color: var(--text-light);
     margin-bottom: var(--spacing-sm);
     line-height: 1.5;
+}
+
+[data-theme="dark"] .blog-card p {
+    color: var(--text-light);
 }
 
 .blog-card .tags {
@@ -161,8 +206,21 @@
     transition: var(--transition);
 }
 
+[data-theme="dark"] .pagination button {
+    background: var(--surface-color);
+    border-color: var(--border-color);
+    color: var(--text-color);
+}
+
 .pagination button:hover:not(:disabled),
 .pagination button.active {
+    background: var(--primary-color);
+    border-color: var(--primary-color);
+    color: white;
+}
+
+[data-theme="dark"] .pagination button:hover:not(:disabled),
+[data-theme="dark"] .pagination button.active {
     background: var(--primary-color);
     border-color: var(--primary-color);
     color: white;

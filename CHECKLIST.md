@@ -8,10 +8,10 @@
   - [x] Modal para detalhes do projeto
   - [x] Sistema de filtros por categoria
 
-- [ ] Modo Escuro
-  - [ ] Toggle de tema
-  - [ ] Persistência da preferência do usuário
-  - [ ] Animações de transição
+- [x] Modo Escuro
+  - [x] Toggle de tema
+  - [x] Persistência da preferência do usuário
+  - [x] Animações de transição
 
 - [x] Melhorias de UI
   - [x] Ícones modernos
@@ -20,11 +20,12 @@
   - [x] Tooltips informativos
 
 ## 2. 💻 Funcionalidades
-- [ ] Sistema de Blog
-  - [ ] Listagem de posts
-  - [ ] Páginas individuais
-  - [ ] Categorias e tags
-  - [ ] Sistema de busca
+- [x] Sistema de Blog
+  - [x] Listagem de posts
+  - [x] Páginas individuais
+  - [x] Categorias e tags
+  - [x] Sistema de busca
+  - [ ] Modo escuro no blog
 
 - [x] Interatividade
   - [x] Menu mobile aprimorado
@@ -45,11 +46,11 @@
   - [x] Cache de recursos
   - [x] Loading progressivo
 
-- [ ] SEO
-  - [ ] Meta tags
-  - [ ] Schema markup
-  - [ ] Sitemap
-  - [ ] Robots.txt
+- [x] SEO
+  - [x] Meta tags
+  - [x] Schema markup
+  - [x] Sitemap
+  - [x] Robots.txt
 
 ## 4. 📱 Responsividade
 - [x] Breakpoints
@@ -96,7 +97,10 @@
 2. ~~Responsividade~~ ✅
 3. ~~Otimização de imagens~~ ✅
 4. ~~Formulário de contato funcional~~ ✅
-5. Modo Escuro (Próximo passo)
+5. ~~Modo Escuro~~ ✅
+6. ~~Sistema de Blog~~ ✅
+7. Modo Escuro no Blog (Em progresso)
+8. Segurança
 
 ---
 *Este checklist será atualizado conforme o projeto evolui*
