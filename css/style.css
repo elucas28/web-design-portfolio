@@ -37,8 +37,8 @@
     --accent-color: #93c5fd;
     --background-color: #111827;
     --surface-color: #1f2937;
-    --text-color: #f3f4f6;
-    --text-light: #9ca3af;
+    --text-color: #6081c4;
+    --text-light: #3b82f6;
     --border-color: #374151;
     --card-background: #1f2937;
     --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
@@ -48,7 +48,7 @@
 
 /* Theme Transition */
 *, *::before, *::after {
-    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+    transition: background-color 0.2s ease, color 0.2s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 * {
@@ -129,7 +129,7 @@ body {
     display: flex;
     align-items: center;
     text-align: center;
-    background: linear-gradient(135deg, #f0f9ff 0%, #04609c 100%);
+    background: linear-gradient(135deg, #f0f9ff 0%, #f0f9ff 100%);
 }
 
 .hero-title {
