@@ -5,51 +5,77 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <!-- Meta tags principais -->
-    <title>Blog - UI/UX Design & Desenvolvimento Web</title>
-    <meta name="description" content="Blog sobre UI/UX Design, desenvolvimento web e tendências em design digital.">
-    <meta name="keywords" content="blog, UI design, UX design, web design, desenvolvimento web, design digital">
-    <meta name="author" content="Croat's">
+    <title>Blog - Croat's Web Design</title>
+    <meta name="description" content="Blog sobre UI/UX Design e Desenvolvimento Web. Compartilhando conhecimento e experiências sobre design digital.">
+    <meta name="keywords" content="blog, UI design, UX design, web design, desenvolvimento web, artigos, tutoriais">
+    <meta name="author" content="Eduardo Lucas">
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://elucas28.github.io/web-design-portfolio/blog/">
-    <meta property="og:title" content="Blog - UI/UX Design & Desenvolvimento Web">
-    <meta property="og:description" content="Blog sobre UI/UX Design, desenvolvimento web e tendências em design digital.">
+    <meta property="og:title" content="Blog - Croat's Web Design">
+    <meta property="og:description" content="Blog sobre UI/UX Design e Desenvolvimento Web. Compartilhando conhecimento sobre design digital.">
     <meta property="og:image" content="https://elucas28.github.io/web-design-portfolio/img/og-image.jpg">
 
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://elucas28.github.io/web-design-portfolio/blog/">
+    <meta property="twitter:title" content="Blog - Croat's Web Design">
+    <meta property="twitter:description" content="Blog sobre UI/UX Design e Desenvolvimento Web. Compartilhando conhecimento sobre design digital.">
+    <meta property="twitter:image" content="https://elucas28.github.io/web-design-portfolio/img/og-image.jpg">
 
-    <!-- CSS -->
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="../img/favicon.png">
+    <link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+
+    <!-- Schema.org markup para Blog -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Blog",
+        "name": "Blog Croat's Web Design",
+        "description": "Blog sobre UI/UX Design e Desenvolvimento Web",
+        "url": "https://elucas28.github.io/web-design-portfolio/blog/",
+        "author": {
+            "@type": "Person",
+            "name": "Eduardo Lucas"
+        }
+    }
+    </script>
+
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/blog.css">
-
-    <!-- Scripts -->
-    <script src="../js/theme.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
 </head>
 <body>
     <header class="header">
         <nav class="nav container">
-            <a href="../index.html" class="logo">Croat's Web Design</a>
+            <div class="logo">Croat's</div>
             <ul class="nav-links">
-                <li><a href="../index.html#home">Home</a></li>
-                <li><a href="../index.html#skills">Habilidades</a></li>
+                <li><a href="../index.html">Home</a></li>
                 <li><a href="../index.html#projects">Projetos</a></li>
-                <li><a href="../index.html#experience">Experiência</a></li>
+                <li><a href="../index.html#skills">Habilidades</a></li>
+                <li><a href="index.html" class="active">Blog</a></li>
                 <li><a href="../index.html#contact">Contato</a></li>
-                <li>
-                    <button id="theme-toggle" aria-label="Alternar tema">
-                        <svg class="theme-icon light" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
-                        </svg>
-                        <svg class="theme-icon dark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
-                        </svg>
-                    </button>
-                </li>
             </ul>
+            <button class="theme-toggle" aria-label="Alternar tema">
+                <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="5"></circle>
+                    <line x1="12" y1="1" x2="12" y2="3"></line>
+                    <line x1="12" y1="21" x2="12" y2="23"></line>
+                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                    <line x1="1" y1="12" x2="3" y2="12"></line>
+                    <line x1="21" y1="12" x2="23" y2="12"></line>
+                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                </svg>
+                <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                </svg>
+            </button>
         </nav>
     </header>
 
@@ -61,23 +87,11 @@
             </div>
         </section>
 
-        <section class="blog-filters">
+        <section class="search-section">
             <div class="container">
                 <div class="search-bar">
-                    <input type="text" placeholder="Buscar artigos..." aria-label="Buscar artigos">
-                    <button aria-label="Buscar">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
-                        </svg>
-                    </button>
-                </div>
-                <div class="tags-filter">
-                    <button class="tag active">Todos</button>
-                    <button class="tag">UI Design</button>
-                    <button class="tag">UX Design</button>
-                    <button class="tag">Web Dev</button>
-                    <button class="tag">Mobile</button>
-                    <button class="tag">Tendências</button>
+                    <input type="text" placeholder="Pesquisar posts..." aria-label="Pesquisar posts">
+                    <button>Buscar</button>
                 </div>
             </div>
         </section>
@@ -85,83 +99,75 @@
         <section class="blog-grid">
             <div class="container">
                 <article class="blog-card">
-                    <img src="../img/project-1.jpg" alt="Artigo sobre UI Design" loading="lazy">
-                    <div class="blog-card-content">
-                        <div class="blog-card-meta">
-                            <span>26 Dez 2024</span>
-                            <span>•</span>
-                            <span>5 min leitura</span>
-                        </div>
-                        <h2>Princípios de UI Design para Interfaces Modernas</h2>
-                        <p>Descubra as melhores práticas e princípios fundamentais para criar interfaces de usuário modernas e eficientes.</p>
-                        <div class="tags">
-                            <span class="tag">UI Design</span>
-                            <span class="tag">Design System</span>
+                    <div class="blog-image">
+                        <img src="../img/blog/post1.jpg" alt="UI Design Trends 2024">
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">12 Dez 2023</div>
+                        <h3>Tendências de UI Design para 2024</h3>
+                        <p>Descubra as principais tendências que vão dominar o design de interfaces no próximo ano.</p>
+                        <div class="blog-tags">
+                            <span class="blog-tag">UI Design</span>
+                            <span class="blog-tag">Tendências</span>
                         </div>
                     </div>
                 </article>
 
                 <article class="blog-card">
-                    <img src="../img/project-3.jpg" alt="Artigo sobre UX Research" loading="lazy">
-                    <div class="blog-card-content">
-                        <div class="blog-card-meta">
-                            <span>25 Dez 2024</span>
-                            <span>•</span>
-                            <span>7 min leitura</span>
-                        </div>
-                        <h2>O Impacto da Pesquisa UX no Sucesso do Produto</h2>
-                        <p>Como a pesquisa de usuário pode transformar seu produto digital e melhorar a experiência do usuário.</p>
-                        <div class="tags">
-                            <span class="tag">UX Design</span>
-                            <span class="tag">Pesquisa</span>
+                    <div class="blog-image">
+                        <img src="../img/blog/post2.jpg" alt="UX Research">
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">5 Dez 2023</div>
+                        <h3>A Importância da Pesquisa UX</h3>
+                        <p>Como a pesquisa de usuários pode transformar completamente seu projeto digital.</p>
+                        <div class="blog-tags">
+                            <span class="blog-tag">UX Design</span>
+                            <span class="blog-tag">Pesquisa</span>
                         </div>
                     </div>
                 </article>
 
                 <article class="blog-card">
-                    <img src="../img/project-image.jpg" alt="Artigo sobre Web Development" loading="lazy">
-                    <div class="blog-card-content">
-                        <div class="blog-card-meta">
-                            <span>24 Dez 2024</span>
-                            <span>•</span>
-                            <span>6 min leitura</span>
+                    <div class="blog-image">
+                        <img src="../img/blog/post3.jpg" alt="Web Development">
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">28 Nov 2023</div>
+                        <h3>Desenvolvimento Web Moderno</h3>
+                        <p>As melhores práticas e ferramentas para desenvolvimento web em 2024.</p>
+                        <div class="blog-tags">
+                            <span class="blog-tag">Web Dev</span>
+                            <span class="blog-tag">Frontend</span>
                         </div>
-                        <h2>Tendências em Desenvolvimento Web para 2024</h2>
-                        <p>As principais tendências e tecnologias que estão moldando o futuro do desenvolvimento web.</p>
-                        <div class="tags">
-                            <span class="tag">Web Dev</span>
-                            <span class="tag">Tendências</span>
+                    </div>
+                </article>
+
+                <article class="blog-card">
+                    <div class="blog-image">
+                        <img src="../img/blog/post4.jpg" alt="Mobile Design">
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">20 Nov 2023</div>
+                        <h3>Design Mobile First</h3>
+                        <p>Por que começar pelo mobile é essencial no design responsivo moderno.</p>
+                        <div class="blog-tags">
+                            <span class="blog-tag">Mobile</span>
+                            <span class="blog-tag">Responsivo</span>
                         </div>
                     </div>
                 </article>
             </div>
         </section>
-
-        <div class="pagination">
-            <button aria-label="Página anterior" disabled>
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M15 19l-7-7 7-7"></path>
-                </svg>
-            </button>
-            <div class="pages">
-                <button class="active">1</button>
-                <button>2</button>
-                <button>3</button>
-            </div>
-            <button aria-label="Próxima página">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M9 5l7 7-7 7"></path>
-                </svg>
-            </button>
-        </div>
     </main>
 
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2024 Croat's. Todos os direitos reservados.</p>
+            <p>&copy; 2024 Croat's Web Design. Todos os direitos reservados.</p>
         </div>
     </footer>
 
+    <script src="../js/theme.js"></script>
     <script src="../js/blog.js"></script>
 </body>
 </html>
