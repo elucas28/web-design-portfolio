@@ -1,16 +1,50 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Mobile Menu Toggle
+    // Mobile Menu
     const mobileMenu = document.querySelector('.mobile-menu');
     const navLinks = document.querySelector('.nav-links');
     
     if (mobileMenu) {
         mobileMenu.addEventListener('click', () => {
-            navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
             mobileMenu.classList.toggle('active');
+            navLinks.classList.toggle('active');
+            document.body.classList.toggle('menu-open');
+        });
+
+        // Fechar menu ao clicar em um link
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('active');
+                navLinks.classList.remove('active');
+                document.body.classList.remove('menu-open');
+            });
         });
     }
 
-    // Projeto Filtros
+    // Detectar scroll para adicionar sombra ao header
+    const header = document.querySelector('.header');
+    let lastScroll = 0;
+
+    window.addEventListener('scroll', () => {
+        const currentScroll = window.pageYOffset;
+
+        // Adicionar sombra ao rolar
+        if (currentScroll > 50) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
+
+        // Esconder/mostrar header ao rolar
+        if (currentScroll > lastScroll && currentScroll > 100) {
+            header.classList.add('header-hidden');
+        } else {
+            header.classList.remove('header-hidden');
+        }
+
+        lastScroll = currentScroll;
+    });
+
+    // Projeto Filtros com animação suave
     const filterButtons = document.querySelectorAll('.filter-btn');
     const projectCards = document.querySelectorAll('.project-card');
 
@@ -24,29 +58,34 @@ document.addEventListener('DOMContentLoaded', () => {
             const filter = button.getAttribute('data-filter');
 
             projectCards.forEach(card => {
-                if (filter === 'all' || card.getAttribute('data-category') === filter) {
-                    card.style.display = 'block';
-                    setTimeout(() => {
-                        card.style.opacity = '1';
-                        card.style.transform = 'scale(1)';
-                    }, 10);
-                } else {
-                    card.style.opacity = '0';
-                    card.style.transform = 'scale(0.8)';
-                    setTimeout(() => {
-                        card.style.display = 'none';
-                    }, 300);
-                }
+                // Adiciona classe para animação
+                card.classList.add('filtering');
+
+                setTimeout(() => {
+                    if (filter === 'all' || card.getAttribute('data-category') === filter) {
+                        card.style.display = 'block';
+                        setTimeout(() => {
+                            card.classList.remove('filtering');
+                            card.classList.add('show');
+                        }, 10);
+                    } else {
+                        card.classList.remove('show');
+                        card.classList.add('filtering');
+                        setTimeout(() => {
+                            card.style.display = 'none';
+                        }, 300);
+                    }
+                }, 10);
             });
         });
     });
 
-    // Modal de Projeto
+    // Modal de Projeto com melhor UX mobile
     const modal = document.getElementById('projectModal');
     const modalBody = modal.querySelector('.modal-body');
     const modalClose = modal.querySelector('.modal-close');
 
-    // Dados dos projetos (você pode expandir isso)
+    // Dados dos projetos
     const projectsData = {
         1: {
             title: 'App de Finanças',
@@ -74,7 +113,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
-    // Abrir Modal
+    // Abrir Modal com animação suave
     document.querySelectorAll('.btn-view-project').forEach(button => {
         button.addEventListener('click', () => {
             const projectId = button.getAttribute('data-project');
@@ -110,69 +149,57 @@ document.addEventListener('DOMContentLoaded', () => {
                 `;
                 modal.style.display = 'block';
                 document.body.style.overflow = 'hidden';
+                
+                // Adiciona classe para animação
+                setTimeout(() => {
+                    modal.classList.add('modal-active');
+                }, 10);
             }
         });
     });
 
-    // Fechar Modal
-    modalClose.addEventListener('click', () => {
-        modal.style.display = 'none';
-        document.body.style.overflow = 'auto';
-    });
-
-    // Fechar Modal ao clicar fora
-    window.addEventListener('click', (e) => {
-        if (e.target === modal) {
+    // Fechar Modal com animação
+    const closeModal = () => {
+        modal.classList.remove('modal-active');
+        setTimeout(() => {
             modal.style.display = 'none';
             document.body.style.overflow = 'auto';
+        }, 300);
+    };
+
+    modalClose.addEventListener('click', closeModal);
+
+    // Fechar Modal ao clicar fora ou com tecla ESC
+    window.addEventListener('click', (e) => {
+        if (e.target === modal) {
+            closeModal();
         }
     });
 
-    // Smooth Scroll
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
-            if (target) {
-                target.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-                // Fechar menu mobile se estiver aberto
-                if (window.innerWidth <= 768) {
-                    navLinks.style.display = 'none';
-                    mobileMenu.classList.remove('active');
-                }
-            }
-        });
+    window.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+            closeModal();
+        }
     });
 
-    // Form Submission
-    const contactForm = document.querySelector('.contact-form');
-    if (contactForm) {
-        contactForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            // Aqui você pode adicionar a lógica para enviar o formulário
-            alert('Mensagem enviada com sucesso!');
-            contactForm.reset();
-        });
-    }
-
-    // Intersection Observer for Animations
+    // Intersection Observer para animações de entrada
     const observerOptions = {
-        threshold: 0.1
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
     };
 
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('animate');
+                // Parar de observar após a animação
+                observer.unobserve(entry.target);
             }
         });
     }, observerOptions);
 
-    // Observe all sections
-    document.querySelectorAll('section').forEach(section => {
-        observer.observe(section);
+    // Observar elementos para animação
+    document.querySelectorAll('section, .project-card, .skill-card').forEach(element => {
+        observer.observe(element);
     });
 });
