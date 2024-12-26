@@ -42,8 +42,68 @@
         <section id="projects" class="projects">
             <div class="container">
                 <h2 class="section-title">Projetos</h2>
+                
+                <!-- Filtros de Projeto -->
+                <div class="project-filters">
+                    <button class="filter-btn active" data-filter="all">Todos</button>
+                    <button class="filter-btn" data-filter="ui">UI Design</button>
+                    <button class="filter-btn" data-filter="ux">UX Design</button>
+                    <button class="filter-btn" data-filter="web">Web Design</button>
+                </div>
+
+                <!-- Grade de Projetos -->
                 <div class="project-grid">
-                    <!-- Projetos serão adicionados aqui -->
+                    <!-- Projeto 1 -->
+                    <article class="project-card" data-category="ui">
+                        <div class="project-image">
+                            <img src="https://via.placeholder.com/600x400" alt="UI Design Project" loading="lazy">
+                            <div class="project-overlay">
+                                <div class="project-details">
+                                    <h3>App de Finanças</h3>
+                                    <p>UI Design • Mobile App</p>
+                                    <button class="btn-view-project" data-project="1">Ver Projeto</button>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Projeto 2 -->
+                    <article class="project-card" data-category="ux">
+                        <div class="project-image">
+                            <img src="https://via.placeholder.com/600x400" alt="UX Research Project" loading="lazy">
+                            <div class="project-overlay">
+                                <div class="project-details">
+                                    <h3>Pesquisa UX E-commerce</h3>
+                                    <p>UX Research • Web</p>
+                                    <button class="btn-view-project" data-project="2">Ver Projeto</button>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Projeto 3 -->
+                    <article class="project-card" data-category="web">
+                        <div class="project-image">
+                            <img src="https://via.placeholder.com/600x400" alt="Web Design Project" loading="lazy">
+                            <div class="project-overlay">
+                                <div class="project-details">
+                                    <h3>Site Responsivo</h3>
+                                    <p>Web Design • Frontend</p>
+                                    <button class="btn-view-project" data-project="3">Ver Projeto</button>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+
+            <!-- Modal de Projeto -->
+            <div class="project-modal" id="projectModal">
+                <div class="modal-content">
+                    <button class="modal-close">&times;</button>
+                    <div class="modal-body">
+                        <!-- Conteúdo do modal será inserido via JavaScript -->
+                    </div>
                 </div>
             </div>
         </section>
