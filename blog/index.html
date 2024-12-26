@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Meta tags principais -->
+    <title>Blog - Eduardo Lucas | UI/UX Design</title>
+    <meta name="description" content="Blog sobre UI/UX Design, desenvolvimento web e tendências em design digital.">
+    <meta name="keywords" content="blog, UI design, UX design, web design, desenvolvimento web, tendências">
+    <meta name="author" content="Eduardo Lucas">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="blog">
+    <meta property="og:url" content="https://elucas28.github.io/web-design-portfolio/blog/">
+    <meta property="og:title" content="Blog - Eduardo Lucas | UI/UX Design">
+    <meta property="og:description" content="Blog sobre UI/UX Design, desenvolvimento web e tendências em design digital.">
+    <meta property="og:image" content="https://elucas28.github.io/web-design-portfolio/img/og-image.jpg">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="../img/favicon.png">
+    <link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/blog.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="nav container">
+            <div class="logo">Design Portfolio</div>
+            <ul class="nav-links">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../index.html#projects">Projetos</a></li>
+                <li><a href="../index.html#skills">Habilidades</a></li>
+                <li><a href="#" class="active">Blog</a></li>
+                <li><a href="../index.html#contact">Contato</a></li>
+            </ul>
+            <button class="theme-toggle" aria-label="Alternar tema">
+                <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="5"></circle>
+                    <line x1="12" y1="1" x2="12" y2="3"></line>
+                    <line x1="12" y1="21" x2="12" y2="23"></line>
+                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                    <line x1="1" y1="12" x2="3" y2="12"></line>
+                    <line x1="21" y1="12" x2="23" y2="12"></line>
+                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                </svg>
+                <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                </svg>
+            </button>
+            <button class="mobile-menu" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+    </header>
+
+    <main>
+        <section class="blog-hero">
+            <div class="container">
+                <h1>Blog</h1>
+                <p>Compartilhando conhecimento sobre UI/UX Design e desenvolvimento web</p>
+            </div>
+        </section>
+
+        <section class="blog-filters container">
+            <div class="search-bar">
+                <input type="text" id="search-input" placeholder="Buscar posts...">
+                <button id="search-button" aria-label="Buscar">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                    </svg>
+                </button>
+            </div>
+            <div class="tags-filter">
+                <button class="tag active" data-tag="all">Todos</button>
+                <button class="tag" data-tag="ui-design">UI Design</button>
+                <button class="tag" data-tag="ux-design">UX Design</button>
+                <button class="tag" data-tag="web-dev">Web Dev</button>
+                <button class="tag" data-tag="tips">Dicas</button>
+            </div>
+        </section>
+
+        <section class="blog-grid container">
+            <!-- Posts serão carregados dinamicamente aqui -->
+        </section>
+
+        <div class="pagination container">
+            <button class="prev" disabled>Anterior</button>
+            <div class="pages">
+                <button class="active">1</button>
+                <button>2</button>
+                <button>3</button>
+            </div>
+            <button class="next">Próximo</button>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Eduardo Lucas. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/blog.js"></script>
+</body>
+</html>
