@@ -1,11 +1,11 @@
 /* Theme Variables */
 :root {
     /* Light Theme (default) */
-    --primary-color: #2563eb;
-    --secondary-color: #1e40af;
-    --accent-color: #3b82f6;
-    --background-color: #e4e4e4;
-    --surface-color: #e0eaf5;
+    --primary-color: #93c5fd;
+    --secondary-color: #93c5fd;
+    --accent-color: #93c5fd;
+    --background-color: #e8f0f8;
+    --surface-color: #e8f0f8;
     --text-color: #1f2937;
     --text-light: #6b7280;
     --border-color: #d3d3d4;
@@ -40,7 +40,7 @@
     --text-color: #6081c4;
     --text-light: #6081c4;
     --border-color: #41464e;
-    --card-background: #1f2937;
+    --card-background: #3b4c64;
     --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
     --overlay-color: rgba(0, 0, 0, 0.8);
     --header-background: rgba(17, 24, 39, 0.95);
@@ -129,7 +129,7 @@ body {
     display: flex;
     align-items: center;
     text-align: center;
-    background: linear-gradient(135deg, #f0f9ff 0%, #f0f9ff 100%);
+    background: linear-gradient(135deg, #ffffff 0%, #ffffff 100%);
 }
 
 .hero-title {
