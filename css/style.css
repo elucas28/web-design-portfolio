@@ -4,12 +4,12 @@
     --primary-color: #2563eb;
     --secondary-color: #1e40af;
     --accent-color: #3b82f6;
-    --background-color: #ffffff;
-    --surface-color: #f8fafc;
+    --background-color: #e4e4e4;
+    --surface-color: #e0eaf5;
     --text-color: #1f2937;
     --text-light: #6b7280;
-    --border-color: #e5e7eb;
-    --card-background: #ffffff;
+    --border-color: #d3d3d4;
+    --card-background: #e4e4e4;
     --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     --overlay-color: rgba(0, 0, 0, 0.7);
     --header-background: rgba(255, 255, 255, 0.95);
@@ -33,9 +33,9 @@
 /* Dark Theme */
 [data-theme="dark"] {
     --primary-color: #60a5fa;
-    --secondary-color: #3b82f6;
+    --secondary-color: #60a5fa;
     --accent-color: #93c5fd;
-    --background-color: #111827;
+    --background-color: #253453;
     --surface-color: #1f2937;
     --text-color: #6081c4;
     --text-light: #6081c4;
