@@ -132,7 +132,80 @@ function searchPosts(query) {
     renderPosts();
 }
 
+// Função para filtrar os posts por tag
+function filterPosts(tag) {
+    const tags = document.querySelectorAll('.tags-filter .tag');
+    const posts = document.querySelectorAll('.blog-card');
+    
+    tags.forEach(t => t.classList.remove('active'));
+    document.querySelector(`.tags-filter .tag:contains('${tag}')`).classList.add('active');
+    
+    posts.forEach(post => {
+        const postTags = Array.from(post.querySelectorAll('.tags .tag')).map(t => t.textContent);
+        if (tag === 'Todos' || postTags.includes(tag)) {
+            post.style.display = 'block';
+        } else {
+            post.style.display = 'none';
+        }
+    });
+}
+
+// Função para buscar posts
+function searchPosts(query) {
+    const posts = document.querySelectorAll('.blog-card');
+    const searchQuery = query.toLowerCase();
+    
+    posts.forEach(post => {
+        const title = post.querySelector('h2').textContent.toLowerCase();
+        const content = post.querySelector('p').textContent.toLowerCase();
+        const tags = Array.from(post.querySelectorAll('.tags .tag'))
+            .map(tag => tag.textContent.toLowerCase());
+        
+        if (title.includes(searchQuery) || 
+            content.includes(searchQuery) || 
+            tags.some(tag => tag.includes(searchQuery))) {
+            post.style.display = 'block';
+        } else {
+            post.style.display = 'none';
+        }
+    });
+}
+
 // Event Listeners
+document.addEventListener('DOMContentLoaded', () => {
+    // Filtro de tags
+    const tagButtons = document.querySelectorAll('.tags-filter .tag');
+    tagButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            filterPosts(button.textContent);
+        });
+    });
+    
+    // Busca
+    const searchInput = document.querySelector('.search-bar input');
+    const searchButton = document.querySelector('.search-bar button');
+    
+    searchButton.addEventListener('click', () => {
+        searchPosts(searchInput.value);
+    });
+    
+    searchInput.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') {
+            searchPosts(searchInput.value);
+        }
+    });
+    
+    // Paginação
+    const pageButtons = document.querySelectorAll('.pagination .pages button');
+    pageButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            pageButtons.forEach(btn => btn.classList.remove('active'));
+            button.classList.add('active');
+            // Aqui você pode adicionar a lógica para carregar os posts da página selecionada
+        });
+    });
+});
+
 tagButtons.forEach(button => {
     button.addEventListener('click', () => {
         tagButtons.forEach(btn => btn.classList.remove('active'));
