@@ -139,15 +139,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     filterButtons.forEach(button => {
         button.addEventListener('click', () => {
-            // Remove active class from all buttons
             filterButtons.forEach(btn => btn.classList.remove('active'));
-            // Add active class to clicked button
             button.classList.add('active');
 
             const filter = button.getAttribute('data-filter');
 
             projectCards.forEach(card => {
-                // Adiciona classe para animação
                 card.classList.add('filtering');
 
                 setTimeout(() => {
@@ -177,71 +174,266 @@ document.addEventListener('DOMContentLoaded', () => {
     // Dados dos posts
     const postsData = {
         1: {
-            title: 'Tendências de UI Design para 2024',
+            title: 'IA no Design: O Futuro do UI/UX',
             content: `
-                <img src="../img/blog/post1.jpg" alt="UI Design Trends 2024">
-                <h2>Tendências de UI Design para 2024</h2>
-                <p>O mundo do design de interface está em constante evolução, e 2024 promete trazer mudanças significativas na maneira como criamos e interagimos com interfaces digitais.</p>
+                <img src="../img/blog/ai-design.jpg" alt="IA no Design">
+                <h2>IA no Design: O Futuro do UI/UX</h2>
                 
-                <h3>Principais Tendências</h3>
+                <p>A Inteligência Artificial está revolucionando a maneira como criamos e pensamos o design de interfaces. Em 2024, vemos uma integração cada vez maior entre IA e design, trazendo novas possibilidades e desafios.</p>
+                
+                <h3>Impacto da IA no Design</h3>
                 <ul>
-                    <li>Design Minimalista e Funcional</li>
-                    <li>Microinterações Avançadas</li>
-                    <li>Glassmorphism 2.0</li>
-                    <li>Cores Vibrantes e Contrastantes</li>
+                    <li><strong>Geração de Layouts:</strong> Ferramentas como Midjourney e DALL-E estão sendo usadas para gerar conceitos iniciais de design.</li>
+                    <li><strong>Personalização em Tempo Real:</strong> Interfaces que se adaptam ao comportamento do usuário usando IA.</li>
+                    <li><strong>Automação de Tarefas:</strong> IA auxiliando em tarefas repetitivas, permitindo que designers foquem em aspectos mais criativos.</li>
+                    <li><strong>Testes A/B Inteligentes:</strong> Algoritmos que otimizam interfaces baseados em dados de usuário.</li>
                 </ul>
                 
-                <p>Estas tendências refletem uma mudança na maneira como os usuários interagem com produtos digitais, priorizando experiências mais intuitivas e emocionalmente conectadas.</p>
+                <h3>Ferramentas de IA para Designers</h3>
+                <p>Novas ferramentas estão surgindo rapidamente:</p>
+                <ul>
+                    <li>Adobe Firefly para geração de assets</li>
+                    <li>Figma AI para automação de design</li>
+                    <li>Uizard para prototipagem rápida</li>
+                    <li>Khroma para paletas de cores inteligentes</li>
+                </ul>
                 
-                <h3>Impacto no Design</h3>
-                <p>A implementação dessas tendências deve ser feita de forma estratégica, sempre considerando as necessidades dos usuários e os objetivos do produto.</p>
+                <h3>O Papel do Designer na Era da IA</h3>
+                <p>Com o avanço da IA, o papel do designer está evoluindo. Em vez de ser substituído, o designer se torna um curador e diretor criativo, usando IA como uma ferramenta para amplificar sua criatividade e eficiência.</p>
+                
+                <h3>Considerações Éticas</h3>
+                <p>É crucial considerar as implicações éticas do uso de IA no design:</p>
+                <ul>
+                    <li>Vieses algorítmicos</li>
+                    <li>Privacidade do usuário</li>
+                    <li>Transparência nas decisões automatizadas</li>
+                    <li>Acessibilidade e inclusão</li>
+                </ul>
             `
         },
         2: {
-            title: 'A Importância da Pesquisa UX',
+            title: 'Design Systems em 2024',
             content: `
-                <img src="../img/blog/post2.jpg" alt="UX Research">
-                <h2>A Importância da Pesquisa UX</h2>
-                <p>A pesquisa de experiência do usuário é fundamental para criar produtos digitais que realmente atendam às necessidades dos usuários.</p>
+                <img src="../img/blog/design-system.jpg" alt="Design Systems">
+                <h2>Design Systems em 2024: Evolução e Tendências</h2>
                 
-                <h3>Métodos de Pesquisa</h3>
+                <p>Os Design Systems continuam evoluindo e se tornando cada vez mais cruciais para empresas de todos os tamanhos. Em 2024, vemos uma nova geração de sistemas de design que são mais flexíveis, escaláveis e inclusivos.</p>
+                
+                <h3>Tendências em Design Systems</h3>
                 <ul>
-                    <li>Entrevistas com Usuários</li>
-                    <li>Testes de Usabilidade</li>
-                    <li>Análise de Dados</li>
-                    <li>Pesquisas Contextuais</li>
+                    <li><strong>Sistemas Adaptativos:</strong> Design systems que se ajustam automaticamente a diferentes contextos e necessidades.</li>
+                    <li><strong>Tokens Dinâmicos:</strong> Uso avançado de design tokens para maior flexibilidade e consistência.</li>
+                    <li><strong>Acessibilidade Integrada:</strong> Componentes com acessibilidade nativa e documentação WCAG.</li>
+                    <li><strong>Internacionalização:</strong> Suporte robusto para diferentes idiomas e culturas.</li>
                 </ul>
                 
-                <p>Uma pesquisa UX bem conduzida pode revelar insights valiosos sobre o comportamento e as necessidades dos usuários.</p>
+                <h3>Ferramentas e Tecnologias</h3>
+                <p>As principais ferramentas para Design Systems em 2024:</p>
+                <ul>
+                    <li>Figma com Variants e Auto-layout avançado</li>
+                    <li>Storybook 7.0 com melhor suporte a componentes</li>
+                    <li>Tokens Studio para gestão de design tokens</li>
+                    <li>Chromatic para testes visuais automatizados</li>
+                </ul>
                 
-                <h3>Benefícios</h3>
-                <p>Investir em pesquisa UX pode reduzir custos de desenvolvimento, aumentar a satisfação do usuário e melhorar as taxas de conversão.</p>
+                <h3>Melhores Práticas</h3>
+                <p>Recomendações para Design Systems modernos:</p>
+                <ul>
+                    <li>Documentação viva e interativa</li>
+                    <li>Versionamento semântico</li>
+                    <li>Testes automatizados</li>
+                    <li>Feedback loop com usuários</li>
+                </ul>
+                
+                <h3>Cases de Sucesso</h3>
+                <p>Exemplos de empresas com Design Systems exemplares:</p>
+                <ul>
+                    <li>Material Design 3.0 (Google)</li>
+                    <li>Polaris (Shopify)</li>
+                    <li>Atlassian Design System</li>
+                    <li>Carbon Design System (IBM)</li>
+                </ul>
             `
         },
         3: {
-            title: 'Desenvolvimento Web Moderno',
+            title: 'Web Components e o Futuro do Frontend',
             content: `
-                <img src="../img/blog/post3.jpg" alt="Web Development">
-                <h2>Desenvolvimento Web Moderno</h2>
-                <p>O desenvolvimento web moderno exige uma combinação de habilidades técnicas e compreensão profunda de experiência do usuário.</p>
+                <img src="../img/blog/web-components.jpg" alt="Web Components">
+                <h2>Web Components e o Futuro do Frontend</h2>
                 
-                <h3>Tecnologias Essenciais</h3>
+                <p>Web Components estão se tornando cada vez mais relevantes no desenvolvimento frontend, oferecendo uma forma padronizada de criar componentes reutilizáveis que funcionam em qualquer framework.</p>
+                
+                <h3>Por que Web Components?</h3>
                 <ul>
-                    <li>HTML5 Semântico</li>
-                    <li>CSS3 Moderno</li>
-                    <li>JavaScript ES6+</li>
-                    <li>Frameworks Modernos</li>
+                    <li><strong>Interoperabilidade:</strong> Funcionam com qualquer framework ou biblioteca</li>
+                    <li><strong>Encapsulamento:</strong> Shadow DOM para isolamento de estilos</li>
+                    <li><strong>Reutilização:</strong> Componentes verdadeiramente portáveis</li>
+                    <li><strong>Padronização:</strong> Parte da especificação web oficial</li>
                 </ul>
                 
-                <p>A escolha das tecnologias certas é crucial para criar aplicações web performáticas e escaláveis.</p>
+                <h3>Tecnologias Fundamentais</h3>
+                <p>Os pilares dos Web Components:</p>
+                <ul>
+                    <li>Custom Elements</li>
+                    <li>Shadow DOM</li>
+                    <li>HTML Templates</li>
+                    <li>ES Modules</li>
+                </ul>
                 
-                <h3>Melhores Práticas</h3>
-                <p>Seguir as melhores práticas de desenvolvimento garante código mais limpo, manutenível e acessível.</p>
+                <h3>Frameworks e Bibliotecas</h3>
+                <p>Ferramentas populares para Web Components:</p>
+                <ul>
+                    <li>Lit 3.0 (Google)</li>
+                    <li>Stencil (Ionic)</li>
+                    <li>Fast (Microsoft)</li>
+                    <li>Hybrids</li>
+                </ul>
+                
+                <h3>Casos de Uso</h3>
+                <p>Exemplos práticos de uso de Web Components:</p>
+                <ul>
+                    <li>Microfrontends</li>
+                    <li>Design Systems</li>
+                    <li>Widgets embedáveis</li>
+                    <li>Aplicações enterprise</li>
+                </ul>
+            `
+        },
+        4: {
+            title: 'Motion Design na Era Digital',
+            content: `
+                <img src="../img/blog/motion-design.jpg" alt="Motion Design">
+                <h2>Motion Design na Era Digital</h2>
+                
+                <p>O Motion Design se tornou um elemento crucial na experiência do usuário digital, criando interfaces mais intuitivas e engajantes através do movimento e da animação.</p>
+                
+                <h3>Princípios do Motion Design</h3>
+                <ul>
+                    <li><strong>Timing e Spacing:</strong> Criando animações naturais e fluidas</li>
+                    <li><strong>Feedback Visual:</strong> Comunicando estados e ações</li>
+                    <li><strong>Continuidade:</strong> Mantendo coerência nas transições</li>
+                    <li><strong>Hierarquia:</strong> Guiando a atenção do usuário</li>
+                </ul>
+                
+                <h3>Ferramentas e Tecnologias</h3>
+                <p>Stack tecnológica para Motion Design:</p>
+                <ul>
+                    <li>After Effects para prototipagem</li>
+                    <li>Lottie para animações web</li>
+                    <li>GSAP para animações JavaScript</li>
+                    <li>Framer Motion para React</li>
+                </ul>
+                
+                <h3>Tendências em Motion Design</h3>
+                <p>O que está em alta:</p>
+                <ul>
+                    <li>Microinterações responsivas</li>
+                    <li>Animações 3D com WebGL</li>
+                    <li>Scroll-driven animations</li>
+                    <li>Animações adaptativas</li>
+                </ul>
+                
+                <h3>Performance e Acessibilidade</h3>
+                <p>Considerações importantes:</p>
+                <ul>
+                    <li>Otimização de performance</li>
+                    <li>Redução de motion</li>
+                    <li>Preferências do usuário</li>
+                    <li>Fallbacks graciosos</li>
+                </ul>
+            `
+        },
+        5: {
+            title: 'Acessibilidade: Além do WCAG',
+            content: `
+                <img src="../img/blog/accessibility.jpg" alt="Acessibilidade Web">
+                <h2>Acessibilidade: Além do WCAG</h2>
+                
+                <p>A acessibilidade web está evoluindo além das diretrizes WCAG, focando em uma abordagem mais holística e centrada no usuário para criar experiências verdadeiramente inclusivas.</p>
+                
+                <h3>Além das Diretrizes</h3>
+                <ul>
+                    <li><strong>Design Inclusivo:</strong> Considerando diversidade desde o início</li>
+                    <li><strong>Pesquisa com Usuários:</strong> Incluindo pessoas com deficiência no processo</li>
+                    <li><strong>Tecnologias Assistivas:</strong> Compreendendo diferentes necessidades</li>
+                    <li><strong>Cultura de Acessibilidade:</strong> Tornando-a parte do DNA da empresa</li>
+                </ul>
+                
+                <h3>Tecnologias e Ferramentas</h3>
+                <p>Recursos para melhorar a acessibilidade:</p>
+                <ul>
+                    <li>Axe DevTools para testes</li>
+                    <li>NVDA e VoiceOver</li>
+                    <li>Pa11y para CI/CD</li>
+                    <li>Stark para design inclusivo</li>
+                </ul>
+                
+                <h3>Tendências em Acessibilidade</h3>
+                <p>Novidades no campo:</p>
+                <ul>
+                    <li>IA para geração de alt text</li>
+                    <li>Personalização adaptativa</li>
+                    <li>Overlays inteligentes</li>
+                    <li>Testes automatizados avançados</li>
+                </ul>
+                
+                <h3>Métricas e ROI</h3>
+                <p>Benefícios mensuráveis:</p>
+                <ul>
+                    <li>Aumento de alcance</li>
+                    <li>Melhor SEO</li>
+                    <li>Redução de riscos legais</li>
+                    <li>Satisfação do usuário</li>
+                </ul>
+            `
+        },
+        6: {
+            title: 'Core Web Vitals em 2024',
+            content: `
+                <img src="../img/blog/performance.jpg" alt="Web Performance">
+                <h2>Core Web Vitals em 2024: O Novo Padrão de Performance</h2>
+                
+                <p>Os Core Web Vitals continuam evoluindo e se tornando cada vez mais importantes para o sucesso de sites e aplicações web, com novos métricas e padrões sendo introduzidos.</p>
+                
+                <h3>Novas Métricas</h3>
+                <ul>
+                    <li><strong>LCP (Largest Contentful Paint):</strong> Agora com threshold mais rigoroso</li>
+                    <li><strong>FID (First Input Delay):</strong> Substituído por INP em 2024</li>
+                    <li><strong>CLS (Cumulative Layout Shift):</strong> Novas considerações para animações</li>
+                    <li><strong>INP (Interaction to Next Paint):</strong> Nova métrica crucial</li>
+                </ul>
+                
+                <h3>Ferramentas de Otimização</h3>
+                <p>Stack tecnológica para performance:</p>
+                <ul>
+                    <li>Lighthouse CI</li>
+                    <li>WebPageTest</li>
+                    <li>Chrome UX Report</li>
+                    <li>PageSpeed Insights</li>
+                </ul>
+                
+                <h3>Estratégias de Otimização</h3>
+                <p>Melhores práticas atualizadas:</p>
+                <ul>
+                    <li>Otimização de imagens com formatos modernos</li>
+                    <li>Lazy loading inteligente</li>
+                    <li>Estratégias de caching avançadas</li>
+                    <li>Server-side rendering quando apropriado</li>
+                </ul>
+                
+                <h3>Impacto nos Negócios</h3>
+                <p>Benefícios de boa performance:</p>
+                <ul>
+                    <li>Melhor ranqueamento no Google</li>
+                    <li>Aumento nas conversões</li>
+                    <li>Redução de bounce rate</li>
+                    <li>Maior engajamento do usuário</li>
+                </ul>
             `
         }
     };
 
-    // Abrir Modal com animação suave
+    // Abrir Modal
     document.querySelectorAll('.btn-view-project').forEach(button => {
         button.addEventListener('click', () => {
             const postId = button.getAttribute('data-post');
@@ -252,7 +444,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 modal.style.display = 'block';
                 document.body.style.overflow = 'hidden';
                 
-                // Adiciona classe para animação
                 setTimeout(() => {
                     modal.classList.add('modal-active');
                 }, 10);
@@ -260,7 +451,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Fechar Modal com animação
+    // Fechar Modal
     const closeModal = () => {
         modal.classList.remove('modal-active');
         setTimeout(() => {
@@ -271,7 +462,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     modalClose.addEventListener('click', closeModal);
 
-    // Fechar Modal ao clicar fora ou com tecla ESC
     window.addEventListener('click', (e) => {
         if (e.target === modal) {
             closeModal();
