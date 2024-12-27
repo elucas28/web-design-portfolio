@@ -428,14 +428,14 @@ section {
     position: absolute;
     top: 0;
     left: 0;
-    right: 0;
-    bottom: 0;
-    background: var(--overlay-color);
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    opacity: 0;
+    transition: opacity 0.3s ease;
     display: flex;
     align-items: center;
     justify-content: center;
-    opacity: 0;
-    transition: var(--transition);
 }
 
 .project-card:hover .project-overlay {
@@ -448,6 +448,7 @@ section {
     padding: var(--spacing-md);
     transform: translateY(20px);
     transition: transform 0.3s ease;
+    width: 100%;
 }
 
 .project-card:hover .project-details {
@@ -460,19 +461,21 @@ section {
 }
 
 .project-details p {
-    font-size: 0.9rem;
     opacity: 0.9;
+    font-size: 0.9rem;
     margin-bottom: var(--spacing-sm);
 }
 
 .btn-view-project {
+    padding: 0.75rem 1.5rem;
     background: var(--primary-color);
     color: white;
     border: none;
-    padding: 0.75rem 1.5rem;
     border-radius: var(--border-radius);
     cursor: pointer;
     transition: var(--transition);
+    display: inline-block;
+    margin: 0 auto;
 }
 
 .btn-view-project:hover {
