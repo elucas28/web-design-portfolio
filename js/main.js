@@ -90,27 +90,32 @@ document.addEventListener('DOMContentLoaded', () => {
         1: {
             title: 'Dashboard de Gestão de Agentes',
             description: 'Uma aplicação para gerenciamento de agentes inteligentes.',
-            technologies: ['Windsurf', 'Retool'],
-            images: ['c:\Users\eduar\Downloads\Use apps for business and personal use (800 x 600 px).png', 'c:\Users\eduar\Downloads\Mind Map.png'],
-            challenge: 'O desafio era criar uma interface que simplificasse o gerenciamento financeiro para usuários iniciantes.',
-            solution: 'Desenvolvemos uma UI minimalista com foco em visualização de dados e ações rápidas.'
+            technologies: ['Windsurf', 'Langchain', 'Retool', 'IA'],
+            images: ['img/project-dashboard.jpg', 'img/project-dashboard-2.jpg'],
+            challenge: 'O desafio era criar uma interface que simplificasse o gerenciamento de agentes para usuários iniciantes.',
+            solution: 'Desenvolvemos uma UI minimalista com funcionalidades essenciais e de facil indentificação.'
         },
         2: {
-            title: 'Pesquisa UX E-commerce',
-            description: 'Projeto de pesquisa e redesign da experiência do usuário para uma plataforma de e-commerce.',
-            technologies: ['User Research', 'Wireframing', 'Usability Testing'],
-            images: ['https://via.placeholder.com/800x600', 'https://via.placeholder.com/800x600'],
-            challenge: 'Melhorar as taxas de conversão e reduzir o abandono de carrinho.',
-            solution: 'Implementamos um novo fluxo de checkout e melhoramos a navegação do catálogo.'
+            title: 'Implementação de Agentes Inteligentes',
+            description: 'Uma aplicação para integração via API e configuração de agentes.',
+            technologies: ['Windsurf', 'Huggingface', 'Langchain'],
+            challenge: 'Facilitar o uso de tecnologias de IA para usuários iniciantes.',
+            solution: 'Desenvolvemos uma automação da dashboard com API e configuração de agentes.'
         },
         3: {
-            title: 'Site Responsivo',
-            description: 'Design e desenvolvimento de um site responsivo para uma empresa de tecnologia.',
-            technologies: ['HTML/CSS', 'JavaScript', 'Responsive Design'],
-            images: ['https://via.placeholder.com/800x600', 'https://via.placeholder.com/800x600'],
+            title: 'Site Responsivo com IA',
+            description: 'Design e desenvolvimento de site responsivo para empresas.',
+            technologies: ['Windsurf', 'HTML/CSS', 'JavaScript'],
             challenge: 'Criar uma experiência consistente em todos os dispositivos.',
             solution: 'Utilizamos design adaptativo e progressive enhancement.'
-        }
+        },
+        4: {
+            title: 'Automação de Processos Repetitivos',
+            description: 'Uma aplicação para gerenciamento de dados da empresa.',
+            technologies: ['Windsurf', 'Huggingface', 'Langchain', 'Retool'],
+            challenge: 'O desafio era criar uma interface que simplificasse o uso de imformações importantes da empresa.',
+            solution: 'Desenvolvemos uma automação com foco em visualização precisa de dados e ações rápidas.'
+        },
     };
 
     // Abrir Modal com animação suave
