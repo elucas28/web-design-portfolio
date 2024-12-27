@@ -176,7 +176,7 @@ document.addEventListener('DOMContentLoaded', () => {
         1: {
             title: 'IA no Design: O Futuro do UI/UX',
             content: `
-                <img src="../img/blog/ai-design.jpg" alt="IA no Design">
+                <img src="../img/project-1.jpg" alt="AI no Design - Interface moderna em diferentes dispositivos">
                 <h2>IA no Design: O Futuro do UI/UX</h2>
                 
                 <p>A Inteligência Artificial está revolucionando a maneira como criamos e pensamos o design de interfaces. Em 2024, vemos uma integração cada vez maior entre IA e design, trazendo novas possibilidades e desafios.</p>
@@ -214,7 +214,7 @@ document.addEventListener('DOMContentLoaded', () => {
         2: {
             title: 'Design Systems em 2024',
             content: `
-                <img src="../img/blog/design-system.jpg" alt="Design Systems">
+                <img src="../img/project-3.jpg" alt="Design Systems - Website responsivo com elementos visuais">
                 <h2>Design Systems em 2024: Evolução e Tendências</h2>
                 
                 <p>Os Design Systems continuam evoluindo e se tornando cada vez mais cruciais para empresas de todos os tamanhos. Em 2024, vemos uma nova geração de sistemas de design que são mais flexíveis, escaláveis e inclusivos.</p>
@@ -258,7 +258,7 @@ document.addEventListener('DOMContentLoaded', () => {
         3: {
             title: 'Web Components e o Futuro do Frontend',
             content: `
-                <img src="../img/blog/web-components.jpg" alt="Web Components">
+                <img src="../img/project-image.jpg" alt="Web Components - Interface moderna com componentes">
                 <h2>Web Components e o Futuro do Frontend</h2>
                 
                 <p>Web Components estão se tornando cada vez mais relevantes no desenvolvimento frontend, oferecendo uma forma padronizada de criar componentes reutilizáveis que funcionam em qualquer framework.</p>
@@ -302,7 +302,7 @@ document.addEventListener('DOMContentLoaded', () => {
         4: {
             title: 'Motion Design na Era Digital',
             content: `
-                <img src="../img/blog/motion-design.jpg" alt="Motion Design">
+                <img src="../img/project-1.jpg" alt="Motion Design - Interface com animações e transições">
                 <h2>Motion Design na Era Digital</h2>
                 
                 <p>O Motion Design se tornou um elemento crucial na experiência do usuário digital, criando interfaces mais intuitivas e engajantes através do movimento e da animação.</p>
@@ -346,7 +346,7 @@ document.addEventListener('DOMContentLoaded', () => {
         5: {
             title: 'Acessibilidade: Além do WCAG',
             content: `
-                <img src="../img/blog/accessibility.jpg" alt="Acessibilidade Web">
+                <img src="../img/project-3.jpg" alt="Acessibilidade Web">
                 <h2>Acessibilidade: Além do WCAG</h2>
                 
                 <p>A acessibilidade web está evoluindo além das diretrizes WCAG, focando em uma abordagem mais holística e centrada no usuário para criar experiências verdadeiramente inclusivas.</p>
@@ -390,7 +390,7 @@ document.addEventListener('DOMContentLoaded', () => {
         6: {
             title: 'Core Web Vitals em 2024',
             content: `
-                <img src="../img/blog/performance.jpg" alt="Web Performance">
+                <img src="../img/project-image.jpg" alt="Web Performance">
                 <h2>Core Web Vitals em 2024: O Novo Padrão de Performance</h2>
                 
                 <p>Os Core Web Vitals continuam evoluindo e se tornando cada vez mais importantes para o sucesso de sites e aplicações web, com novos métricas e padrões sendo introduzidos.</p>
