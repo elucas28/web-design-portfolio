@@ -48,7 +48,7 @@
 
 /* Theme Transition */
 *, *::before, *::after {
-    transition: background-color 0.2s ease, color 0.2s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+    transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 * {
@@ -131,7 +131,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Hero Section */
 .hero {
-    min-height: 100vh;
+    min-height: 70vh;
     display: flex;
     align-items: center;
     text-align: center;
@@ -531,7 +531,7 @@ section {
     color: var(--text-color);
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: right;
     position: relative;
     width: 40px;
     height: 40px;
@@ -549,12 +549,12 @@ section {
     position: absolute;
     transition: transform 0.5s ease, opacity 0.3s ease;
 }
-
+/* icone sol */
 .sun-icon {
     opacity: 0;
     transform: scale(0.5);
 }
-
+/* icone lua */
 .moon-icon {
     opacity: 1;
     transform: scale(1);

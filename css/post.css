@@ -142,55 +142,6 @@
     transform: translateY(-2px);
 }
 
-/* Dark Theme Overrides */
-[data-theme="dark"] .post-header h1 {
-    color: var(--text-color);
-}
-
-[data-theme="dark"] .post-meta {
-    color: var(--text-light);
-}
-
-[data-theme="dark"] .post-image {
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-}
-
-[data-theme="dark"] .post-body h2 {
-    color: var(--text-color);
-}
-
-[data-theme="dark"] .post-body p {
-    color: var(--text-color);
-}
-
-[data-theme="dark"] .post-body li {
-    color: var(--text-color);
-}
-
-[data-theme="dark"] .post-footer {
-    border-color: var(--border-color);
-}
-
-[data-theme="dark"] .author-info h3 {
-    color: var(--text-color);
-}
-
-[data-theme="dark"] .author-info p {
-    color: var(--text-light);
-}
-
-[data-theme="dark"] .share h3 {
-    color: var(--text-color);
-}
-
-[data-theme="dark"] .share-button {
-    opacity: 0.9;
-}
-
-[data-theme="dark"] .share-button:hover {
-    opacity: 1;
-}
-
 /* Responsive Design */
 @media (max-width: 768px) {
     .post-content {
