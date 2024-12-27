@@ -88,10 +88,10 @@ document.addEventListener('DOMContentLoaded', () => {
     // Dados dos projetos
     const projectsData = {
         1: {
-            title: 'App de Finanças',
-            description: 'Um aplicativo mobile para gerenciamento de finanças pessoais, com foco em uma interface limpa e intuitiva.',
-            technologies: ['Figma', 'Prototype', 'User Testing'],
-            images: ['https://via.placeholder.com/800x600', 'https://via.placeholder.com/800x600'],
+            title: 'Dashboard de Gestão de Agentes',
+            description: 'Uma aplicação para gerenciamento de agentes inteligentes.',
+            technologies: ['Windsurf', 'Retool'],
+            images: ['c:\Users\eduar\Downloads\Use apps for business and personal use (800 x 600 px).png', 'c:\Users\eduar\Downloads\Mind Map.png'],
             challenge: 'O desafio era criar uma interface que simplificasse o gerenciamento financeiro para usuários iniciantes.',
             solution: 'Desenvolvemos uma UI minimalista com foco em visualização de dados e ações rápidas.'
         },
